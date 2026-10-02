@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Excalidraw Clone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="toolbar">
+    <div class="group" id="tools">
+      <button data-tool="select" title="Select / move (1)">Select</button>
+      <button data-tool="pencil" title="Pencil (2)">Pencil</button>
+      <button data-tool="line" title="Line (3)">Line</button>
+      <button data-tool="rectangle" title="Rectangle (4)">Rect</button>
+      <button data-tool="circle" title="Circle (5)">Circle</button>
+      <button data-tool="text" title="Text (6)">Text</button>
+      <button data-tool="eraser" title="Eraser (7)">Eraser</button>
+    </div>
+    <div class="group">
+      <input type="color" id="colorPicker" value="#1e1e1e" title="Color">
+      <label>Size <input type="range" id="sizeSlider" min="1" max="20" value="3"></label>
+    </div>
+    <div class="group">
+      <button id="undoBtn">Undo</button>
+      <button id="redoBtn">Redo</button>
+      <button id="clearBtn">Clear</button>
+    </div>
+    <div class="group">
+      <button id="saveBtn">Save</button>
+      <button id="loadBtn">Load</button>
+      <button id="pngBtn">PNG</button>
+    </div>
+  </div>
+
+  <div id="board">
+    <canvas id="drawingCanvas"></canvas>
+    <input type="text" id="textInput">
+  </div>
+  <div id="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  font-family: system-ui, sans-serif;
+}
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 8px;
+}
+.group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 4px;
+}
+button {
+  border: 0;
+  background: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font: inherit;
+}
+button:hover { background: #e4e3fb; }
+button.active { background: #e4e3fb; outline: 1.5px solid #6965db; }
+button:disabled { opacity: 0.35; cursor: default; }
+#board {
+  position: relative;
+  flex: 1;
+  margin: 0 8px 8px;
+  min-height: 0;
+  border: 1px solid #000;
+  background: #fff;
+  overflow: hidden;
+}
+#drawingCanvas {
+  display: block;
+  touch-action: none;   /* stop page scrolling while drawing on touch screens */
+  cursor: crosshair;
+}
+#textInput {
+  position: absolute;
+  display: none;
+  border: 1px dashed #6965db;
+  background: transparent;
+  outline: none;
+  padding: 0;
+  min-width: 60px;
+}
+#status {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+}
+#status.show { opacity: 1; }
